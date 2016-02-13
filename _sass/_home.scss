@@ -1,0 +1,24 @@
+.app-screenshot {
+
+  @include box-shadow(0, 3px, 10px, rgba(0, 0, 0, 0.4), inset);
+  background-color: $green-color-dark;
+  padding: 40px 0 40px 0;
+
+  img {
+    margin: -100px 0;
+    float: right;
+    height: 400px;
+  }
+}
+
+.features {
+
+  h2 {
+    font-weight: $heavy-font-weight;
+    font-family: $regular-font-family;
+  }
+
+  p {
+    font-size: 1.4em;
+  }
+}

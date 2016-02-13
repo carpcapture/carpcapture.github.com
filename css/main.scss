@@ -3,27 +3,41 @@
 ---
 @charset "utf-8";
 
+@font-face {
+  font-family: 'Lato-Light';
+  src: url('/assets/fonts/Lato-Light') format('embedded-opentype'),
+       url('/assets/fonts/Lato-Light.woff') format('woff'),
+       url('/assets/fonts/Lato-Light.ttf') format('truetype'),
+}
 
+@font-face {
+  font-family: 'Lato-Regular';
+  src: url('/assets/fonts/Lato-Regular') format('embedded-opentype'),
+       url('/assets/fonts/Lato-Regular.woff') format('woff'),
+       url('/assets/fonts/Lato-Regular.ttf') format('truetype'),
+}
 
 // Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-family: Lato-Light, "Helvetica Neue", Helvetica, Arial, sans-serif;
 $base-font-size:   16px;
 $base-font-weight: 400;
+$regular-font-family: Lato-Regular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$heavy-font-weight: 900;
 $small-font-size:  $base-font-size * 0.875;
 $base-line-height: 1.5;
 
 $spacing-unit:     30px;
 
-$text-color:       #111;
-$background-color: #fdfdfd;
+$text-color:       #ddd;
+$background-color: #004c00;
 $brand-color:      #2a7ae2;
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
+$green-color:       #a9c7a9;
+$green-color-light: lighten($green-color, 40%);
+$green-color-dark:  darken($green-color, 25%);
 
 // Width of the content area
-$content-width:    800px;
+$content-width:    1000px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
@@ -44,10 +58,26 @@ $on-laptop:        800px;
 }
 
 
+@mixin box-shadow($left:0, $top:2px, $blur:2px, $color:#000, $inset:"") {
+    -webkit-box-shadow:$left $top $blur $color #{$inset};
+    -moz-box-shadow:$left $top $blur $color #{$inset};
+    box-shadow:$left $top $blur $color #{$inset};
+}
+
+@mixin box-sizing( $type: border-box ) {
+    -webkit-box-sizing: $type;
+       -moz-box-sizing: $type;
+         -o-box-sizing: $type;
+        -ms-box-sizing: $type;
+            box-sizing: $type;
+}
+
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
+        "grid",
+        "home",
         "layout",
         "syntax-highlighting"
 ;
