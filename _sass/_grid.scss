@@ -45,3 +45,11 @@ $pad: 20px;
     padding-right: $pad;
   }
 }
+
+@include media-query($on-palm) {
+  [class^='col-'] {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+}
